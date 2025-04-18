@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Crush Mega</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-purple-100 to-pink-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-8">
+            <h1 class="text-5xl font-bold text-purple-600 mb-2">Fruit Crush Mega</h1>
+            <p class="text-xl text-purple-400">Match fruits to complete levels!</p>
+        </header>
+        <div class="grid grid-cols-6 gap-4 justify-center" id="fruit-board">
+        </div>
+    </div>
+    <script>
+        const fruits = ['🍎', '🍓', '🍇', '🍉', '🍒', '🍊', '🍌', '🍍', '🥝', '🍐', '🍑', '🥭'];
+        const board = document.getElementById('fruit-board');
+        for (let i = 0; i < 36; i++) {
+            const tile = document.createElement('div');
+            tile.className = 'bg-white rounded-lg shadow-lg flex items-center justify-center h-16 w-16 text-3xl hover:scale-110 transition-transform';
+            tile.textContent = fruits[Math.floor(Math.random() * fruits.length)];
+            board.appendChild(tile);
+        }
+    </script>
+</body>
+</html>
